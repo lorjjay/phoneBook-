@@ -1,0 +1,28 @@
+{% extends "master.html" %}
+
+{% block title %}
+  PhoneBook - Update Contact page
+{% endblock %}
+
+{% block content %}
+
+<form method = "POST">
+    {% csrf_token %}
+    <input type = "text" name = "username" placeholder = "username"> <br>
+    <input type = "email" name = "email" placeholder = "email"> <br>
+    <input type = "text" name = "phone" placeholder = "phone"> <br>
+    <input type = "text" name = "address" placeholder = "address"> <br>
+
+    <button type="submit"> Update Contact</button> 
+
+    {% if error %}
+        <p style="color: red;">{{ error }} </p>
+    {% endif %}
+
+    <form method = "POST" action = "{% url 'dashBoard' %}">
+      {% csrf_token %}
+      <button type="submit">Back To Dashboard </button>
+    </form>
+</form>    
+
+{% endblock %}

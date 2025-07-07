@@ -1,0 +1,31 @@
+    {% extends "master.html" %}
+
+{% block title %}
+  Details of: {{owner.username}}
+{% endblock %}
+
+{% block content %}
+  <div class="mycard">
+    <h1> {{owner.username}} </h1>
+    <p>Email: {{owner.email}}</p>
+    <p>Phone: {{ owner.phone }}</p>
+    <p>Address: {{owner.address}}</p>
+    <p>Member since: {{ owner.joined_date }}</p>
+  </div>
+
+    <form method = "GET" action = "{% url 'updateProfile'%}">
+      {% csrf_token %}
+          <button type="submit">Update Profile </button>
+    </form>
+
+        <form method = "POST" action = "{% url 'deleteProfile' %}">
+      {% csrf_token %}
+      <button type="submit">Delete Account </button>
+    </form>
+
+    <form method = "POST" action = "{% url 'dashBoard' %}">
+      {% csrf_token %}
+      <button type="submit">Back To Dashboard </button>
+    </form>
+{% endblock %}
+

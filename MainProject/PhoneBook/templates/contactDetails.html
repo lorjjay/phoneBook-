@@ -1,0 +1,32 @@
+    {% extends "master.html" %}
+
+{% block title %}
+  Details of: {{mycontacts.username}}
+{% endblock %}
+
+{% block content %}
+  <div class="mycard">
+    <h1> {{mycontacts.username}} </h1>
+    <p>Email: {{mycontacts.email}}</p>
+    <p>Phone: {{ mycontacts.phone }}</p>
+    <p>Address: {{mycontacts.address}}</p>
+    <p>Member since: {{ mycontacts.saved_date }}</p>
+  </div>
+
+    <form method = "GET" action = " {% url 'updateContact' mycontacts.id %}">
+      {% csrf_token %}
+    <button type="submit">Update Contact </button>
+    </form>
+
+    <form method = "POST" action = " {% url 'deleteContact' mycontacts.id %} ">
+      {% csrf_token %}
+    <button type="submit">Delete Contact </button>
+    </form>
+
+    <form method = "POST" action = "{% url 'dashBoard' %}">
+      {% csrf_token %}
+      <button type="submit">Back To Dashboard </button>
+    </form>
+
+{% endblock %}
+

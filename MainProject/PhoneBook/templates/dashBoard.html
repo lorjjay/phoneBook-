@@ -1,0 +1,41 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My PhoneBook - List of all contacts
+{% endblock %}
+
+
+{% block content %}
+
+<h2> Welcome, {{ request.user.username }} </h2>
+
+  <form action = " " method == "GET">
+    {% csrf_token %}
+    <div class="mycard">
+      <h1>Contacts</h1>
+      <ul>
+        {% for contact in mycontacts %}
+          <li onclick="window.location = 'contactDetails/{{ contact.id }}'">{{ contact.username }}</li>
+          {% empty %}
+            <li>No saved contact </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+
+    <form action="{% url 'signOut' %}" method="POST">
+      {% csrf_token %}
+    <button type="submit">Logout</button>
+    </form>
+
+    <form method = "POST" action = "{% url 'viewProfile'%}">
+      {% csrf_token %}
+    <button type="submit">View My Account </button>
+    </form>
+
+    <form method = "POST" action = "{% url 'addContact' %}">
+      {% csrf_token %}
+    <button type="submit">Add New Contact </button>
+    </form>
+
+{% endblock %}

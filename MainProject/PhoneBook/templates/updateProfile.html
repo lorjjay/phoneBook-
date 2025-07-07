@@ -1,0 +1,28 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My PhoneBook - Update Profile page
+{% endblock %}
+
+{% block content %}
+
+<form method = "POST">
+    {% csrf_token %}
+    <input type = "text" name = "username" placeholder = "username" value = "{{ myaccount.username }}"> <br>
+    <input type = "email" name = "email" placeholder = "email" value = "{{ myaccount.email }}"> <br>
+    <input type = "text" name = "phone" placeholder = "phone" value = "{{ myaccount.phone }}"> <br>
+    <input type = "text" name = "address" placeholder = "address" value = "{{ myaccount.address }}"> <br>
+
+    <button type="submit"> Change Details </button> 
+
+    {% if error %}
+        <p style="color: red;">{{ error }} </p>
+    {% endif %}
+
+    <form method = "POST" action = "{% url 'viewProfile'%}">
+      {% csrf_token %}
+    <button type="submit">Back To My Account </button>
+    </form>
+</form>    
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My PhoneBook - List of all contacts
+{% endblock %}
+
+
+{% block content %}
+  <div class="mycard">
+    <h1>Members</h1>
+    <ul>
+      {% for x in myusers %}
+        <li onclick="window.location = 'details/{{ x.id }}'">{{ x.username }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
