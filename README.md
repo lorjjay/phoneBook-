@@ -52,7 +52,7 @@ django-learning/
 
 1. **Clone the repository**
    '''terminal
-   git clone https://github.com/yourusername/phonebook-django.git
+   git clone https://github.com/Canopus-Tz/phonebook-django.git
    cd phonebook-django
 
 2. **Create and activate virtual environment**
@@ -64,7 +64,7 @@ django-learning/
     pip install -r requirements.txt
 
 4. **Create .env file**
-    SECRET_KEY=your-secret-key
+    SECRET_KEY= PhoneBook_Type_Of_Shit
     DEBUG=True
     ALLOWED_HOSTS=127.0.0.1,localhost
 
