@@ -64,7 +64,7 @@ django-learning/
     pip install -r requirements.txt
 
 4. **Create .env file**
-    SECRET_KEY= PhoneBook_Type_Of_Shit
+    SECRET_KEY= 
     DEBUG=True
     ALLOWED_HOSTS=127.0.0.1,localhost
 
