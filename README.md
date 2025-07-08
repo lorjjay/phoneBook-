@@ -74,7 +74,7 @@ django-learning/
 6. **Run the server**
      python manage.py runserver
 
-7. **Visit http://127.0.0.1:8000 in your browser**
+7. **Visit http://127.0.0.1:8000/PhoneBook/ in your browser**
 
    
 
