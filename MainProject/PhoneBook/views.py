@@ -215,3 +215,13 @@ def deleteProfile(request):
 
 
 
+@login_required(login_url='signIn')
+def searchContact(request):
+    if request.method == 'GET':
+        search = request.GET.get('search')
+        if search:
+            mycontacts = savedContacts.objects.filter(username__icontains=search, owner=request.user)
+        else:
+            mycontacts = savedContacts.objects.filter(owner=request.user)
+
+        return render(request, 'dashBoard.html', {'mycontacts': mycontacts})
