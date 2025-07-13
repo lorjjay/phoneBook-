@@ -223,8 +223,5 @@ def searchContact(request):
         else:
             mycontacts = savedContacts.objects.filter(owner=request.user)
 
-<<<<<<< HEAD
         return render(request, 'dashBoard.html', {'mycontacts': mycontacts})
-=======
         return render(request, 'dashBoard.html', {'mycontacts': mycontacts})
->>>>>>> 91a0ae930281f50ab242869514e094f75a0e5a97
