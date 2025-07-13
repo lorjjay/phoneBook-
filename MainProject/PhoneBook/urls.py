@@ -17,9 +17,5 @@ urlpatterns = [
     path('updateProfile', views.updateProfile, name = "updateProfile"),
     path('deleteAccount', views.deleteProfile, name = "deleteProfile"),
     path('searchContact', views.searchContact, name = "searchContact")
-<<<<<<< HEAD
-    
-=======
->>>>>>> 91a0ae930281f50ab242869514e094f75a0e5a97
 ]
 # This code defines the URL patterns for the PhoneBook application in a Django project.
